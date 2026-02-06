@@ -13,6 +13,7 @@ import { Box } from '@mui/material';
 import {Button} from '@mui/material';
 import {Typography} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { useUnreadCount } from '../hooks/useUnreadCount';
 
 function createData(
   name: string,
@@ -39,12 +40,14 @@ export default function BasicTable() {
 
   const navigate = useNavigate();
 
+  const unreadCount = useUnreadCount(10000);
+
   return (
-    <Container>
-        <Badge badgeContent={4} color="primary">
+    <Container maxWidth="lg" sx={{ mt: 4 }}>
+      <Badge badgeContent={unreadCount} color="primary">
             <MailIcon color="action" />
-        </Badge>
-    <TableContainer component={Paper}>
+      </Badge>
+    <TableContainer component={Paper} sx={{ mt: 2 }} >
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
