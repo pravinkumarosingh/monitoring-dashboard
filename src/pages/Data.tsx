@@ -5,6 +5,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import Container from "@mui/material/Container";
 
 import Badge from '@mui/material/Badge';
@@ -76,6 +77,13 @@ export default function BasicTable() {
         </TableBody>
       </Table>
     </TableContainer>
+    <Button
+      variant="contained"
+      color="primary"
+      startIcon={<CloudUploadIcon />}
+      onClick={() => navigate("/file")}>
+      Upload File
+    </Button>
     </Container>
   );
 }

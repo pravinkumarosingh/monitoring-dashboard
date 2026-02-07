@@ -61,6 +61,7 @@
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Data from "./pages/Data"; // Data.tsx
+import File from "./pages/File";
 
 export default function App() {
   return (
@@ -70,6 +71,9 @@ export default function App() {
 
       {/* Data page */}
       <Route path="/data" element={<Data />} />
+
+      {/* File Upload Page */}
+      <Route path = "/file" element={<File />} />
     </Routes>
   );
 }
